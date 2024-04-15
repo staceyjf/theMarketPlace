@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import HamburgerMenu from "../HamburgerMenu/HamburgerMenu";
+import HamburgerMenu from "../HamburgerMenu/HamburgerMenuIcon";
 import Cart_icon from "../../assets/NavBar/cart-outline.png";
 import Search_icon from "../../assets/NavBar/search-outline.png";
 import User_icon from "../../assets/NavBar/user-outline.png";
 import styles from "./Navbar.module.scss";
 
 function Navbar() {
-  const [isHamburgerOpen, setIsHamburgerOpen] = useState(true);
+  const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
 
   // toggle between hamburger menu and menu
   const toggleMenu = () => {
@@ -43,9 +43,9 @@ function Navbar() {
         <img src={User_icon} alt="User Icon" />
       </div>
 
-      {/* <div className={styles.hamburger} onClick={toggleMenu}>
+      <div className={styles.hamburger} onClick={toggleMenu}>
         <HamburgerMenu />
-      </div> */}
+      </div>
     </nav>
   );
 }
