@@ -11,30 +11,31 @@ import styles from "./Navbar.module.scss";
 function Navbar() {
   const screenSize = useScreenSize();
   const [isMobile, setIsMobile] = useState(true);
-
-  const detectMobile = () => {
-    if (screenSize.width < 767) setIsMobile(true);
-    else setIsMobile(false);
-  };
-
-  useEffect(() => {
-    detectMobile();
-  }, [screenSize.width]);
-
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
-  // toggle between hamburger menu and menu
-  const toggleMenu = () => {
-    setIsHamburgerOpen(!isHamburgerOpen);
+
+  const detectMobileOrTablet = () => {
+    if (screenSize.width < 600) setIsMobile(true);
+    else setIsMobile(false);
   };
 
   const linkStyles = ({ isActive }) => {
     return isActive ? `${styles.link} ${styles.link_active}` : `${styles.link}`;
   };
 
-  return (
-    <nav className={styles.nav}>
-      <div className={styles.nav_left_wrapper}>theMarketPlace</div>
+  useEffect(() => {
+    detectMobileOrTablet();
+  }, [screenSize.width]);
 
+  // toggle between hamburger menu and menu
+  const toggleMenu = () => {
+    setIsHamburgerOpen(!isHamburgerOpen);
+  };
+
+  return (
+    <nav
+      className={`${styles.nav} ${isHamburgerOpen ? "" : "hamburger_close"}`}
+    >
+      <div className={styles.nav_left_wrapper}>theMarketPlace</div>
       {!isMobile && (
         <div className={styles.nav_menu_wrapper}>
           <NavLink className={linkStyles} to="/">
@@ -51,18 +52,32 @@ function Navbar() {
           </NavLink>
         </div>
       )}
-
+      {isMobile && (
+        <div className={styles.hamburger} onClick={toggleMenu}>
+          <HamburgerMenu />
+        </div>
+      )}
+      {isMobile && isHamburgerOpen && (
+        <div className={styles.nav_mobile_wrapper}>
+          <NavLink className={linkStyles} to="/">
+            Home
+          </NavLink>
+          <NavLink className={linkStyles} to="/womens">
+            Women's
+          </NavLink>
+          <NavLink className={linkStyles} to="/womens">
+            Accessories
+          </NavLink>
+          <NavLink className={linkStyles} to="/womens">
+            Skincare
+          </NavLink>
+        </div>
+      )}
       {!isMobile && (
         <div className={styles.nav_icon_wrapper}>
           <img src={Cart_icon} alt="Cart Icon" />
           <img src={Search_icon} alt="Search Icon" />
           <img src={User_icon} alt="User Icon" />
-        </div>
-      )}
-
-      {isMobile && (
-        <div className={styles.hamburger} onClick={toggleMenu}>
-          <HamburgerMenu />
         </div>
       )}
     </nav>

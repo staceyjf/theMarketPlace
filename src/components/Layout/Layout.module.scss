@@ -7,10 +7,6 @@
   width: 100vw;
   margin: 0 auto;
 
-  @include q.phone {
-    max-width: 500px;
-  }
-
   @include q.tablet {
     padding: 1em 1.5em 0.5em 1.5em;
     max-width: 900px;
