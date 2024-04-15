@@ -1,4 +1,4 @@
-# Welcome to theBookVerse!
+# Welcome to theMarketPlace
 
 theBookVerse is a React front-end application that leverages the power of the Google Books API to provide users with an immersive experience in exploring a vast array of books.
 
