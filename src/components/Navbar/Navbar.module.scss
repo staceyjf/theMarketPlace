@@ -1,0 +1,24 @@
+@use "../../scss/partials/brand-variables" as bv;
+@use "../../scss/partials/queries" as q;
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 50px;
+  @include bv.font--primary(500);
+
+  &_left_wrapper {
+    height: 100%;
+    padding: 2em;
+  }
+
+  &_middle_wrapper {
+    background: blue;
+  }
+
+  &_right_wrapper {
+    background: green;
+  }
+}

@@ -1,0 +1,25 @@
+// partials
+@use "./scss/partials/brand-variables" as bv;
+@use "./scss/partials/queries" as q;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.app-container {
+  margin: 0 auto;
+
+  @include q.phone {
+    max-width: 500px;
+  }
+
+  @include q.tablet {
+    max-width: 900px;
+  }
+
+  @include q.laptop {
+    max-width: 1200px;
+  }
+}
