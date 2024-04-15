@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
-$primary-color: #ff6ed9;
-$primary-color-light: #ffe6e7;
-$secondary-color: #4c3db2;
-$secondary-color-light: #9e98dc;
+$primary-color: #9e8fb2;
+$primary-color-dark: #5c437e;
+$secondary-color: #668586;
+$secondary-color-dark: #0d2929;
 
 // taking the fonts weight as params for easy customisation
 @mixin font--primary($weight) {
