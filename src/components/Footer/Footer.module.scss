@@ -1,0 +1,22 @@
+@use "../../scss/partials/brand-variables" as bv;
+
+.footer {
+  @include bv.font--primary(400);
+  background: lighten(bv.$primary-color, 30%);
+  font-size: xx-small;
+
+  .contact {
+    direction: flex;
+    padding: 0.5em 3em;
+    // border: 1px solid black;
+    // border-top: 1px solid black;
+    // border-bottom: 1px solid black;
+  }
+
+  .copyright {
+    padding: 1.5em 3em;
+    // border-bottom: 1px solid black;
+    // border-left: 1px solid black;
+    // border-right: 1px solid black;
+  }
+}

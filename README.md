@@ -1,17 +1,17 @@
 # Welcome to theMarketPlace
 
-theBookVerse is a React front-end application that leverages the power of the Google Books API to provide users with an immersive experience in exploring a vast array of books.
+<!-- theBookVerse is a React front-end application that leverages the power of the Google Books API to provide users with an immersive experience in exploring a vast array of books.
 
 <div align="center">
   <img src="./brief/homepage.png" alt="Homepage Screenshot" width="100">
   <img src="./brief/homepage_laptop.png" alt="Homepage Screenshot" width="245">
-</div>
+</div> -->
 
 <br>
 
-Explore it at: [books.staceyfanner.com](https://portfolio.staceyfanner.com/theBookVerse/)
+Explore it at: [theMarketPlace.staceyfanner.com](http://portfolio.staceyfanner.com/theMarketPlace/)
 
-## About
+<!-- ## About
 
 theBookVerse is a comprehensive and intuitive books app designed to bring the world of literature to your fingertips. With theBookVerse, users can effortlessly explore an extensive library of books, discover new titles, and delve into detailed information about their favorite books.
 
@@ -66,4 +66,4 @@ theBookVerse is a comprehensive and intuitive books app designed to bring the wo
 ![Git](https://img.shields.io/badge/-Git-05122A?style=flat&logo=git)
 ![GitHub](https://img.shields.io/badge/-GitHub-05122A?style=flat&logo=github)
 
-</div>
+</div> -->
