@@ -9,16 +9,14 @@
     padding: 1em 0;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 
     h2 {
       @include bv.font--secondary(300);
       margin: 0;
     }
 
-    p {
-      text-transform: uppercase;
-      font-size: x-small;
-    }
+    @include bv.link--secondary;
   }
 
   &_features {

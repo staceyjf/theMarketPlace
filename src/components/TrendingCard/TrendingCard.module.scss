@@ -1,3 +1,4 @@
+@use "../../scss/partials/brand-variables" as bv;
 @use "../../scss/partials/queries" as q;
 
 .trending {
@@ -13,10 +14,7 @@
     text-align: start;
   }
 
-  p {
-    text-transform: uppercase;
-    font-size: x-small;
-  }
+  @include bv.link--secondary;
 
   @include q.phone {
     h2 {

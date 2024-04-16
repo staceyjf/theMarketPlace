@@ -34,7 +34,8 @@ function HomePage() {
       <div className={styles.container}>
         <TrendingBanner
           titleText={"Trending Now"}
-          linkText={"View Shop →"}
+          linkText={"View Women's Shop →"}
+          link={"womens"}
           imgUrls={[
             selectImageURL(singleImgURL_square, singleImgURL_rect),
             selectImageURL(groupImgURL_square, groupImgURL_rect),

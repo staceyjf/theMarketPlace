@@ -21,3 +21,20 @@ $grey-color: #353232;
   font-style: normal;
   letter-spacing: 0.025em;
 }
+
+@mixin link--secondary {
+  a {
+    text-transform: uppercase;
+    font-size: x-small;
+    text-decoration: none;
+    color: $grey-color;
+
+    &:hover {
+      color: $primary-color-dark;
+    }
+
+    &:active {
+      color: $primary-color-dark;
+    }
+  }
+}
