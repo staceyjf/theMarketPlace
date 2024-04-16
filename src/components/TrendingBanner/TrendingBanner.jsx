@@ -1,9 +1,9 @@
 import TrendingCard from "../TrendingCard/TrendingCard";
-import groupImgURL from "../../assets/TrendingBanner/trending-group-square.jpg";
-import singleImgURL from "../../assets/TrendingBanner/trending-single-square.jpg";
 import styles from "./TrendingBanner.module.scss";
 
-function TrendingBanner({ titleText, linkText }) {
+function TrendingBanner({ titleText, linkText, imgUrls }) {
+  const cardTitles = ["New Arrivals", "Women's"];
+  const cardBodies = ["Shop now", "Shop now"];
   return (
     <div className={styles.trending}>
       <div className={styles.trending_header}>
@@ -11,16 +11,14 @@ function TrendingBanner({ titleText, linkText }) {
         <p>{linkText}</p>
       </div>
       <div className={styles.trending_features}>
-        <TrendingCard
-          cardTitleText={"New Arrivals"}
-          cardBodyText={"Shop now"}
-          imgUrl={singleImgURL}
-        />
-        <TrendingCard
-          cardTitleText={"Women's"}
-          cardBodyText={"Shop now"}
-          imgUrl={groupImgURL}
-        />
+        {imgUrls.map((imgUrl, index) => (
+          <TrendingCard
+            key={index}
+            cardTitleText={cardTitles[index]}
+            cardBodyText={cardBodies[index]}
+            imgUrl={imgUrl}
+          />
+        ))}
       </div>
     </div>
   );

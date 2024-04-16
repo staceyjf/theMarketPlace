@@ -6,7 +6,7 @@
 
   &_header {
     @include bv.font--primary(300);
-    padding: 1em;
+    padding: 1em 0;
     display: flex;
     justify-content: space-between;
 
@@ -27,6 +27,15 @@
     display: flex;
     flex-direction: row;
     align-items: stretch;
+    justify-content: space-between;
+
+    // &:first-child {
+    //   justify-content: flex-end;
+    // }
+
+    // &:last-child {
+    //   justify-content: flex-start;
+    // }
   }
 
   @include q.phone {
