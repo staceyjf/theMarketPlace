@@ -2,7 +2,8 @@
 @use "../../scss/partials/queries" as q;
 
 .hero {
-  @include bv.font--secondary(400);
+  @include bv.font--secondary(300);
+  color: bv.$grey-color;
   display: flex;
   height: 100%;
   flex-direction: row;
@@ -14,13 +15,18 @@
   }
 
   &_left {
+    padding: 1em;
     h1 {
-      @include bv.font--primary(400);
+      @include bv.font--primary(300);
       color: bv.$primary-color-dark;
 
       span {
         color: bv.$secondary-color-dark;
       }
+    }
+
+    button {
+      margin-top: 1em;
     }
   }
 
@@ -30,5 +36,17 @@
 
   @include q.phone {
     flex-direction: column;
+  }
+
+  @include q.laptop {
+    h1 {
+      font-size: 3em;
+      width: 80%;
+      margin: 0 auto;
+
+      span {
+        margin-left: 1em;
+      }
+    }
   }
 }

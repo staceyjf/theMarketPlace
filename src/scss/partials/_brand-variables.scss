@@ -4,6 +4,7 @@ $primary-color: #9e8fb2;
 $primary-color-dark: #5c437e;
 $secondary-color: #668586;
 $secondary-color-dark: #0d2929;
+$grey-color: #353232;
 
 // taking the fonts weight as params for easy customisation
 @mixin font--primary($weight) {

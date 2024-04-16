@@ -10,7 +10,7 @@ function HeroBanner({ titleText, bodyText }) {
         </h1>
         <h2 className={styles.main_header}>{titleText}</h2>
         <p>{bodyText}</p>
-        <Button buttonText={"Shop Now"} />
+        <Button buttonText={"Shop Now →"} />
       </div>
       <div className={styles.hero_right}>placeholder</div>
     </div>

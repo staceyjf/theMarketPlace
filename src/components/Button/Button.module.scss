@@ -4,15 +4,15 @@
 .button {
   align-items: center;
   background-color: #fff;
-  border: 1px solid #000;
+  border: 2px solid bv.$primary-color;
   box-sizing: border-box;
-  color: #000;
+  color: bv.$grey-color;
+  text-transform: uppercase;
   cursor: pointer;
   display: inline-flex;
   fill: #000;
   font-family: Inter, sans-serif;
   font-size: 16px;
-  font-weight: 600;
   height: 48px;
   justify-content: center;
   letter-spacing: -0.8px;
@@ -33,14 +33,16 @@
 
   &:hover {
     border-color: bv.$secondary-color;
-    color: bv.$secondary-color;
+    color: white;
     fill: bv.$secondary-color;
+    background-color: bv.$secondary-color;
   }
 
   &:active {
     border-color: bv.$secondary-color;
-    color: bv.$secondary-color;
+    color: white;
     fill: bv.$secondary-color;
+    background-color: bv.$secondary-color;
   }
 
   @include q.tablet {
