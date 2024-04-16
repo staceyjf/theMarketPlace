@@ -9,7 +9,7 @@
 
 <br>
 
-Explore it at: [theMarketPlace.staceyfanner.com](http://portfolio.staceyfanner.com/theMarketPlace/)
+Explore it at: [portfolio.staceyfanner.com/theMarketPlace/](http://portfolio.staceyfanner.com/theMarketPlace/)
 
 <!-- ## About
 
