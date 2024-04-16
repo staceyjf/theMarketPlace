@@ -13,6 +13,14 @@ function HomeBanner() {
           <PeopleIllustration />
         </div>
       </div>
+      <div className={styles.container}>
+        <div className={styles.header_wrapper}>
+          <Header text={"Update me"} />
+        </div>
+        <div className={styles.img_wrapper}>
+          <PeopleIllustration />
+        </div>
+      </div>
     </section>
   );
 }
