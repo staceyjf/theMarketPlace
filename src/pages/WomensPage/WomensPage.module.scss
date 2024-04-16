@@ -1,0 +1,24 @@
+@use "../../scss/partials/brand-variables" as bv;
+@use "../../scss/partials/queries" as q;
+
+.womens {
+  width: 100%;
+
+  &_header {
+    @include bv.font--primary(300);
+    padding: 1em 0;
+    display: flex;
+    justify-content: space-between;
+
+    h2 {
+      @include bv.font--secondary(300);
+      margin: 0;
+    }
+  }
+
+  @include q.phone {
+    &_header {
+      padding: 0 10px;
+    }
+  }
+}
