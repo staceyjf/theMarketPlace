@@ -5,7 +5,7 @@ import styles from "./TrendingBanner.module.scss";
 function TrendingBanner({ titleText, linkText, link, imgUrls }) {
   const cardTitles = ["New Arrivals", "Women's"];
   const cardBodies = ["Explore →", "Shop now →"];
-  const links = ["", "womens"];
+  const links = ["skincare", "womens"];
   return (
     <div className={styles.trending}>
       <div className={styles.trending_header}>

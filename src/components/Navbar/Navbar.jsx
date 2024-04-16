@@ -44,10 +44,10 @@ function Navbar() {
           <NavLink className={linkStyles} to="/womens">
             Women's
           </NavLink>
-          <NavLink className={linkStyles} to="/womens">
+          <NavLink className={linkStyles} to="/accessories">
             Accessories
           </NavLink>
-          <NavLink className={linkStyles} to="/womens">
+          <NavLink className={linkStyles} to="/skincare">
             Skincare
           </NavLink>
         </div>
