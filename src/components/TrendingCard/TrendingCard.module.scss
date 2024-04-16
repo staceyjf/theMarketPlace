@@ -1,9 +1,30 @@
 @use "../../scss/partials/queries" as q;
 
 .trending {
+  padding-bottom: 1em;
   img {
     width: 100%;
     object-fit: contain;
+  }
+
+  h2,
+  p {
+    margin: 0;
+    text-align: start;
+  }
+
+  p {
+    text-transform: uppercase;
+    font-size: x-small;
+  }
+
+  @include q.phone {
+    h2 {
+      padding: 0 10px;
+    }
+    p {
+      padding: 0 10px;
+    }
   }
 
   @include q.laptop {

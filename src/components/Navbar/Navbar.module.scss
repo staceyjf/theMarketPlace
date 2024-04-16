@@ -23,14 +23,13 @@
   &_menu_wrapper {
     display: flex;
     justify-content: space-evenly;
-    flex: 2;
+    flex: 3;
   }
 
   &_icon_wrapper {
     display: flex;
     justify-content: flex-end;
-    column-gap: 1em;
-    flex: 1;
+    column-gap: 0.5em;
   }
 
   .hamburger {
@@ -63,9 +62,21 @@
       display: none;
     }
   }
+
+  @include q.laptop {
+    &_menu_wrapper {
+      justify-content: center;
+      column-gap: 1.5em;
+      flex: 4;
+    }
+    &_icon_wrapper {
+      column-gap: 1em;
+    }
+  }
 }
 
 .link {
+  text-transform: uppercase;
   text-decoration: none;
   color: black;
   &:visited {

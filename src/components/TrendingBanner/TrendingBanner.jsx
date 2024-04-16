@@ -3,7 +3,7 @@ import styles from "./TrendingBanner.module.scss";
 
 function TrendingBanner({ titleText, linkText, imgUrls }) {
   const cardTitles = ["New Arrivals", "Women's"];
-  const cardBodies = ["Shop now", "Shop now"];
+  const cardBodies = ["Explore →", "Shop now →"];
   return (
     <div className={styles.trending}>
       <div className={styles.trending_header}>
