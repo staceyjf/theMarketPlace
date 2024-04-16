@@ -12,7 +12,7 @@ import "./App.scss";
 function App() {
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter basename="/theMarketPlace">
         <Layout>
           <Navbar />
           {/* add layout and navbar
