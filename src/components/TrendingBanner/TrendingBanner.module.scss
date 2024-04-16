@@ -1,0 +1,37 @@
+@use "../../scss/partials/brand-variables" as bv;
+@use "../../scss/partials/queries" as q;
+
+.trending {
+  width: 100%;
+
+  &_header {
+    @include bv.font--primary(300);
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+
+    h2 {
+      @include bv.font--secondary(300);
+      margin: 0;
+    }
+
+    p {
+      text-transform: uppercase;
+      font-size: x-small;
+    }
+  }
+
+  &_features {
+    @include bv.font--secondary(300);
+    color: bv.$grey-color;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  @include q.phone {
+    &_features {
+      flex-direction: column;
+    }
+  }
+}

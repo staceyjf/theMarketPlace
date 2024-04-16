@@ -3,16 +3,11 @@
 
 .hero {
   @include bv.font--secondary(300);
+  width: 100%;
   color: bv.$grey-color;
   display: flex;
-  height: 100%;
   flex-direction: row;
   align-items: stretch;
-
-  &_left,
-  &_right {
-    flex: 1;
-  }
 
   &_left {
     padding: 1em;
@@ -30,12 +25,26 @@
     }
   }
 
-  &_right {
-    background-color: red;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
 
   @include q.phone {
     flex-direction: column;
+  }
+
+  @include q.tablet {
+    &_left {
+      flex: 1;
+      width: 50%;
+    }
+
+    img {
+      flex: 1;
+      width: 50%;
+    }
   }
 
   @include q.laptop {
@@ -47,6 +56,17 @@
       span {
         margin-left: 1em;
       }
+    }
+
+    &_left {
+      flex: 1;
+      width: 50%;
+    }
+
+    img {
+      flex: 1;
+      width: 50%;
+      height: 50%;
     }
   }
 }

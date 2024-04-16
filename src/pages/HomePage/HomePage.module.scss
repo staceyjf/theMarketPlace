@@ -17,5 +17,12 @@
     align-items: center;
     text-align: center;
     position: relative;
+    // border: 1px solid black;
+  }
+
+  @include q.laptop {
+    .container {
+      max-height: 50%;
+    }
   }
 }

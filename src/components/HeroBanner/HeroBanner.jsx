@@ -1,4 +1,5 @@
 import Button from "../Button/Button";
+import heroImg from "../../assets/HeroBanner/hero-group-square.jpg";
 import styles from "./HeroBanner.module.scss";
 
 function HeroBanner({ titleText, bodyText }) {
@@ -12,7 +13,8 @@ function HeroBanner({ titleText, bodyText }) {
         <p>{bodyText}</p>
         <Button buttonText={"Shop Now →"} />
       </div>
-      <div className={styles.hero_right}>placeholder</div>
+
+      <img src={heroImg} alt="Group of ladies modelling our latest campaign" />
     </div>
   );
 }

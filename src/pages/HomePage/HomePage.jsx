@@ -1,4 +1,5 @@
 import HeroBanner from "../../components/HeroBanner/HeroBanner";
+import TrendingBanner from "../../components/TrendingBanner/TrendingBanner";
 import styles from "./HomePage.module.scss";
 
 function HomePage() {
@@ -12,7 +13,9 @@ function HomePage() {
           }
         />
       </div>
-      <div className={styles.container}></div>
+      <div className={styles.container}>
+        <TrendingBanner titleText={"Trending Now"} linkText={"View Shop →"} />
+      </div>
     </section>
   );
 }
