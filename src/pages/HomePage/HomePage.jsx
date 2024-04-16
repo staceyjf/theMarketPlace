@@ -1,28 +1,20 @@
-import PeopleIllustration from "../../components/PeopleIllustration/PeopleIllustration";
-import Header from "../../components/Header/Header";
+import HeroBanner from "../../components/HeroBanner/HeroBanner";
 import styles from "./HomePage.module.scss";
 
-function HomeBanner() {
+function HomePage() {
   return (
     <section className={styles.home}>
       <div className={styles.container}>
-        <div className={styles.header_wrapper}>
-          <Header text={"Update me"} />
-        </div>
-        <div className={styles.img_wrapper}>
-          <PeopleIllustration />
-        </div>
+        <HeroBanner
+          titleText={""}
+          bodyText={
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          }
+        />
       </div>
-      <div className={styles.container}>
-        <div className={styles.header_wrapper}>
-          <Header text={"Update me"} />
-        </div>
-        <div className={styles.img_wrapper}>
-          <PeopleIllustration />
-        </div>
-      </div>
+      <div className={styles.container}></div>
     </section>
   );
 }
 
-export default HomeBanner;
+export default HomePage;

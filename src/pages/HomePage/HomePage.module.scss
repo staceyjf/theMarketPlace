@@ -21,49 +21,4 @@
     text-align: center;
     position: relative;
   }
-
-  .img_wrapper {
-    width: 50%;
-  }
-
-  @include q.phone {
-    .container {
-      padding-top: 3.5em;
-    }
-    .header_wrapper {
-      position: absolute;
-      top: 0;
-      width: 80%;
-    }
-  }
-
-  @include q.tablet {
-    .container {
-      padding-top: 4.5em;
-    }
-
-    .header_wrapper {
-      position: absolute;
-      top: 0;
-      width: 45%;
-    }
-  }
-
-  @include q.laptop {
-    .container {
-      padding: 0.5em 0em 0.5em 6em;
-      align-items: flex-start;
-    }
-
-    .img_wrapper {
-      width: 45%;
-    }
-
-    .header_wrapper {
-      position: absolute;
-      top: 25;
-      right: 10%;
-      width: 30%;
-    }
-  }
 }
