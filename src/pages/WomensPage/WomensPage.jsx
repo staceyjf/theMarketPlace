@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import ProductLoader from "../../containers/ProductLoader/ProductLoader";
-import ProductGrid from "../../components/ProductGrid/ProductGrid";
+import ProductLoader from "../../containers/ProductGridLoader/ProductGridLoader";
+
 import styles from "./WomensPage.module.scss";
 
 function WomensPage({ pageHeaderText }) {
@@ -10,14 +10,14 @@ function WomensPage({ pageHeaderText }) {
   }, []);
 
   return (
-    <div className={styles.womens}>
-      <div className={styles.womens_header}>
+    <main className={styles.category}>
+      <div className={styles.category_header}>
         <h2>{pageHeaderText}</h2>
-        <ProductLoader>
-          <ProductGrid category="womens" />
-        </ProductLoader>
       </div>
-    </div>
+      <div className={styles.category_body}>
+        <ProductLoader />
+      </div>
+    </main>
   );
 }
 

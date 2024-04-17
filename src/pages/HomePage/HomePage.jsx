@@ -1,5 +1,5 @@
 import { useLayoutEffect, useState } from "react";
-import useScreenSize from "../../services/useScreenSize";
+import useScreenSize from "../../hooks/useScreenSize";
 
 import heroImgUrl_square from "../../assets/HeroBanner/hero-group-square.jpg";
 import singleImgURL_square from "../../assets/TrendingBanner/trending-single-square.jpg";
@@ -21,8 +21,8 @@ function HomePage() {
   };
 
   return (
-    <section className={styles.home}>
-      <div className={styles.container}>
+    <main className={styles.home}>
+      <section className={styles.container}>
         <HeroBanner
           titleText={""}
           bodyText={
@@ -30,8 +30,8 @@ function HomePage() {
           }
           imgUrl={selectImageURL(heroImgUrl_square, heroImgUrl_rect)}
         />
-      </div>
-      <div className={styles.container}>
+      </section>
+      <section className={styles.container}>
         <TrendingBanner
           titleText={"Trending Now"}
           linkText={"View Women's Shop →"}
@@ -41,8 +41,8 @@ function HomePage() {
             selectImageURL(groupImgURL_square, groupImgURL_rect),
           ]}
         />
-      </div>
-    </section>
+      </section>
+    </main>
   );
 }
 

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import useScreenSize from "../../services/useScreenSize";
+import useScreenSize from "../../hooks/useScreenSize";
 
 import HamburgerMenu from "../HamburgerMenu/HamburgerMenuIcon";
 import Cart_icon from "../../assets/NavBar/cart-outline.png";

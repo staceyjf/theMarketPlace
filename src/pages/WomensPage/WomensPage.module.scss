@@ -1,8 +1,12 @@
 @use "../../scss/partials/brand-variables" as bv;
 @use "../../scss/partials/queries" as q;
 
-.womens {
+.category {
+  flex: 1;
   width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
 
   &_header {
     @include bv.font--primary(300);
@@ -16,9 +20,13 @@
     }
   }
 
+  &_body {
+    flex: 1;
+  }
+
   @include q.phone {
     &_header {
-      padding: 0 10px;
+      padding: 10px 10px;
     }
   }
 }

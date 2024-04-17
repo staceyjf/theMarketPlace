@@ -1,0 +1,27 @@
+@use "../../scss/partials/brand-variables" as bv;
+@use "../../scss/partials/queries" as q;
+
+.container {
+  &_grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.3rem;
+    justify-items: center;
+  }
+
+  @include q.phone {
+  }
+
+  @include q.tablet {
+    &_grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @include q.laptop {
+    &_grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
