@@ -14,8 +14,6 @@ import styles from "./ProductPage.module.scss";
 
 function ProductPage({ product }) {
   // takes reducer function, initial state, initializer function
-  //state to watch for favourite?
-
   const [productItem, dispatchproductItem] = useReducer(
     productItemReducer,
     product,
@@ -34,6 +32,8 @@ function ProductPage({ product }) {
     });
   }, [dispatchproductItem]);
 
+  console.log(productItem);
+
   // update if product is a user fav
   const handleIsFavouritedchange = () => {
     dispatchproductItem({
@@ -41,10 +41,13 @@ function ProductPage({ product }) {
     });
   };
 
-  console.log(productItem);
+  // add additional css as props
+  let stylingClasses = productItem.isFavourited
+    ? `styles.productPage_heart styles.productPage_heart_true`
+    : `styles.productPage_heart`;
 
   return (
-    <div className={styles.productPage}>
+    <div className={stylingClasses}>
       {/* General product info */}
       <div className={styles.productPage_heart}>
         <HeartIcon />
