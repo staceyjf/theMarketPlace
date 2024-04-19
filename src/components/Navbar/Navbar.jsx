@@ -3,9 +3,9 @@ import { NavLink } from "react-router-dom";
 import useScreenSize from "../../hooks/useScreenSize";
 
 import HamburgerMenu from "../HamburgerMenu/HamburgerMenuIcon";
-import Cart_icon from "../../assets/NavBar/cart-outline.png";
-import Search_icon from "../../assets/NavBar/search-outline.png";
-import User_icon from "../../assets/NavBar/user-outline.png";
+import Cart_icon from "../../assets/Icons/cart-outline.png";
+import Search_icon from "../../assets/Icons/search-outline.png";
+import User_icon from "../../assets/Icons/user-outline.png";
 import styles from "./Navbar.module.scss";
 
 function Navbar() {

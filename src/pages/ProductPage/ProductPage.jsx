@@ -1,15 +1,19 @@
 import { useEffect, useReducer } from "react";
-
 import {
   productItemReducer,
   createInitialState,
 } from "../../reducers/productItemReducer.js";
 
-import ProductForm from "../../components/ProductForm/ProductForm.jsx";
+import ProductItemDescription from "../../components/ProductItemDescription/ProductItemDescription.jsx";
+import ProductItemForm from "../../components/ProductItemForm/ProductItemForm.jsx";
+import HeartIcon from "../../components/HeartIcon/HeartIcon.jsx";
+import Button from "../../components/Button/Button.jsx";
+import ProductItemFooter from "../../components/ProductItemFooter/ProductItemFooter.jsx";
+
+import styles from "./ProductPage.module.scss";
 
 function ProductPage({ product }) {
   // takes reducer function, initial state, initializer function
-
   const [productItem, dispatchproductItem] = useReducer(
     productItemReducer,
     product,
@@ -19,40 +23,38 @@ function ProductPage({ product }) {
   useEffect(() => {
     document.title = `Shop ${productItem.title}`;
     return () => (document.title = "Welcome to theMarketPlace");
-  }, []);
+  }, [productItem]);
 
   useEffect(() => {
     // update state with the discounted price
     dispatchproductItem({
       type: "SET_FINAL_PRICE",
     });
-  }, []);
+  }, [dispatchproductItem]);
 
   console.log(productItem);
 
   return (
-    <div className="product-page">
+    <div className={styles.productPage}>
       <div className="product-image-container">
-        <img
-          src={productItem.images[1]}
-          alt={`Product image for ${productItem.title}`}
-        />
-        <img
-          src={productItem.images[2]}
-          alt={`Product image for ${productItem.title}`}
-        />
-      </div>
+        {/* General product info */}
+        <ProductItemDescription productItem={productItem} />
 
-      <div className="product-details">
-        <h2>{productItem.title}</h2>
-        <p>Price: ${productItem.discountedPrice}</p>
-
-        {/* Is this form overkill? */}
-        <ProductForm
+        {/* To handle size & qty selections - Is this form overkill? */}
+        <ProductItemForm
           productItem={productItem}
           dispatchproductItem={dispatchproductItem}
         />
-        {/* <p>Total Price: ${totalPrice}</p> */}
+
+        {/* to handle adding to favourites */}
+        <Button
+          // onClick={handleChange}
+          buttonText={"Add to Favourites"}
+          SvgIcon={HeartIcon}
+        ></Button>
+
+        {/* to extra product info*/}
+        <ProductItemFooter productItem={productItem} />
       </div>
     </div>
   );

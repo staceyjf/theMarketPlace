@@ -1,6 +1,6 @@
-import Button from "../Button/Button.jsx";
-import styles from "./ProductForm.module.scss";
 import { useState, useEffect } from "react";
+import Button from "../Button/Button.jsx";
+import styles from "./ProductItemForm.module.scss";
 
 function ProductForm({ productItem, dispatchproductItem }) {
   const qtyToDisplay = [1, 2, 3, 4, 5, 6, 7];
@@ -37,7 +37,7 @@ function ProductForm({ productItem, dispatchproductItem }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="size-select">Size:</label>
+      <label htmlFor="size-select">Select a Size: </label>
       <select id="size-select" name="size-select" onChange={handleChange}>
         {productItem.sizes.map((size, index) => (
           <option key={index} value={size}>
@@ -53,7 +53,7 @@ function ProductForm({ productItem, dispatchproductItem }) {
       )}
       {isProductAvailable() && (
         <>
-          <label htmlFor="qty-select">Quantity:</label>
+          <label htmlFor="qty-select">Select Quantity: </label>
           <select id="qty-select" name="qty-select" onChange={handleChange}>
             {qtyToDisplay.map((number, index) => (
               <option key={index} value={number}>
