@@ -10,6 +10,12 @@
     justify-items: center;
   }
 
+  // @media only screen and (min-width: 500px) and (max-width: (767px - 1)) {
+  //   &_grid {
+  //     grid-template-columns: repeat(2, 1fr);
+  //   }
+  // }
+
   @include q.tablet {
     &_grid {
       grid-template-columns: repeat(3, 1fr);

@@ -1,7 +1,7 @@
+import { Link } from "react-router-dom";
 import styles from "./ProductCard.module.scss";
 
-function ProductCard({ product }) {
-  console.log(product);
+function ProductCard({ product, category }) {
   const imgBg = {
     backgroundImage: `url(${product.thumbnail})`,
   };
@@ -24,7 +24,9 @@ function ProductCard({ product }) {
           <p className={styles.new}>${finalPrice}</p>
         </div>
         <div className={styles.items + " " + styles.cart}>
-          <span>ADD TO CART →</span>
+          <span>
+            <Link to={`/${category}/${product.id}`}>SHOP PRODUCT →</Link>
+          </span>
         </div>
       </div>
     </div>

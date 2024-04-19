@@ -16,7 +16,7 @@
       margin: 0;
     }
 
-    @include bv.link--secondary;
+    @include bv.link--secondary(bv.$primary-color-dark);
   }
 
   &_features {

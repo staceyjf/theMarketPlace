@@ -22,7 +22,7 @@ $grey-color: #353232;
   letter-spacing: 0.025em;
 }
 
-@mixin link--secondary {
+@mixin link--secondary($hover_color) {
   a {
     text-transform: uppercase;
     font-size: x-small;
@@ -30,11 +30,11 @@ $grey-color: #353232;
     color: $grey-color;
 
     &:hover {
-      color: $primary-color-dark;
+      color: $hover_color;
     }
 
     &:active {
-      color: $primary-color-dark;
+      color: $hover_color;
     }
   }
 }

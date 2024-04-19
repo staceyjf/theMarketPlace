@@ -14,7 +14,7 @@
     text-align: start;
   }
 
-  @include bv.link--secondary;
+  @include bv.link--secondary(bv.$primary-color-dark);
 
   @include q.phone {
     h2 {

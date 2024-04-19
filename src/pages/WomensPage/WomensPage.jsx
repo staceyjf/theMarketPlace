@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import ProductLoader from "../../containers/ProductGridLoader/ProductGridLoader";
+import ProductLoader from "../../containers/ProductLoader/ProductLoader";
 
 import styles from "./WomensPage.module.scss";
 

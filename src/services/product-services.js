@@ -17,7 +17,6 @@ export const getAllProducts = async (categoryStr) => {
   console.log("getAllProducts called with category:", categoryStr);
   const collectionRef = collection(db, categoryStr);
   const snapshot = await getDocs(collectionRef);
-  console.log("snapshot:", snapshot);
   const products = snapshot.docs.map((doc) => {
     return {
       id: doc.id,

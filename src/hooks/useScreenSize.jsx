@@ -17,7 +17,7 @@ const useScreenSize = () => {
     // watch for changes in screen size
     window.addEventListener("resize", handleResize);
 
-    // clean up event listener when componenet mountds
+    // clean up event listener when components mounts
     return () => {
       window.removeEventListener("resize", handleResize);
     };

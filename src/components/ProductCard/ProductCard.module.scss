@@ -7,6 +7,7 @@
   background-color: black;
   background-size: cover;
   cursor: pointer;
+  @include bv.link--secondary(white);
 
   -webkit-box-shadow: 0 0 5px #000;
   box-shadow: 0 0 5px #000;
@@ -23,7 +24,7 @@
   background: rgba(77, 77, 77, 0.9);
   color: #fef5df;
   opacity: 0;
-  transition: all 0.5s;
+  transition: all 0.4s;
 
   @include bv.font--primary(400);
 }
