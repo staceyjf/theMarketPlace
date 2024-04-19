@@ -53,3 +53,24 @@
     min-width: 200px;
   }
 }
+
+.productPage_button { //TODO: how do you fix this?
+
+    svg {
+    margin-right: 10px; 
+    height: 1em;
+    width: 1em;
+  }
+
+  button {
+ &:hover {
+    svg {
+    path {
+      fill: white;
+    }
+  }
+  }
+  }
+ 
+
+}

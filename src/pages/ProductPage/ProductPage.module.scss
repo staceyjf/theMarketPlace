@@ -1,10 +1,23 @@
-.productPage {
-  svg {
-    margin-right: 10px; // Adjust the value as needed
+@use "../../scss/partials/brand-variables" as bv;
+@use "../../scss/partials/queries" as q;
 
-    path {
-      // stroke: black;
-      // fill: none;
-    }
+
+.productPage {
+@include bv.font--primary(400);
+display: flex;
+flex-direction: column;
+
+.productPage_heart {
+  display: flex;
+  justify-content: flex-end;
+
+  svg {
+    width: 1.5em;
+    height: 1.5em;
   }
+}
+
+  button {
+    width: 15em;
+}
 }

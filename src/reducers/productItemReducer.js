@@ -22,20 +22,15 @@ export function productItemReducer(state, action) {
           state.price * ((100 - state.discountPercentage) / 100) * 100
         ) / 100),
       };
-    // case 'INCREMENT_QTY': 
-    //   return {
-    //       ...state
-    //   }  
-    // case 'DECREMENT_QTY': 
-    //   return {
-    //       ...state,
-    //       // logic  
-    //   }  
     case 'UPDATE_PRODUCT': 
       return {
           ...state,
-          selectedSize: action.selectedSize,
-          selectedQty: action.selectedQty
+          ...action.payload,
+      } 
+    case 'TOGGLE_ISFAVOURITED': 
+      return {
+          ...state,
+          isFavourited: !state.isFavourited,
       } 
     default: {
       throw Error('Unknown action: ' + action.type);

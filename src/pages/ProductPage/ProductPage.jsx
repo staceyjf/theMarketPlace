@@ -32,30 +32,36 @@ function ProductPage({ product }) {
     });
   }, [dispatchproductItem]);
 
+  //useEffect(() => {
+  //!isFavourited;
+  //}, [productItem.isFavourited]);
+
   console.log(productItem);
 
   return (
     <div className={styles.productPage}>
-      <div className="product-image-container">
-        {/* General product info */}
-        <ProductItemDescription productItem={productItem} />
-
-        {/* To handle size & qty selections - Is this form overkill? */}
-        <ProductItemForm
-          productItem={productItem}
-          dispatchproductItem={dispatchproductItem}
-        />
-
-        {/* to handle adding to favourites */}
-        <Button
-          // onClick={handleChange}
-          buttonText={"Add to Favourites"}
-          SvgIcon={HeartIcon}
-        ></Button>
-
-        {/* to extra product info*/}
-        <ProductItemFooter productItem={productItem} />
+      {/* General product info */}
+      <div className={styles.productPage_heart}>
+        <HeartIcon />
       </div>
+      <ProductItemDescription productItem={productItem} />
+
+      {/* To handle size & qty selections - Is this form overkill? */}
+      <ProductItemForm
+        productItem={productItem}
+        dispatchproductItem={dispatchproductItem}
+      />
+
+      {/* to handle adding to favourites */}
+      <Button
+        // onClick={handleChange}
+        stylename={"productPage_button"}
+        buttonText={"Add to Favourites"}
+        SvgIcon={HeartIcon}
+      ></Button>
+
+      {/* to extra product info*/}
+      <ProductItemFooter productItem={productItem} />
     </div>
   );
 }

@@ -13,8 +13,10 @@ function ProductForm({ productItem, dispatchproductItem }) {
   useEffect(() => {
     dispatchproductItem({
       type: "UPDATE_PRODUCT",
-      selectedSize: selectedSize,
-      selectedQty: selectedQty,
+      payload: {
+        selectedSize: selectedSize,
+        selectedQty: selectedQty,
+      },
     });
   }, [selectedSize, selectedQty]);
 
@@ -37,30 +39,36 @@ function ProductForm({ productItem, dispatchproductItem }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="size-select">Select a Size: </label>
-      <select id="size-select" name="size-select" onChange={handleChange}>
-        {productItem.sizes.map((size, index) => (
-          <option key={index} value={size}>
-            {size}
-          </option>
-        ))}
-      </select>
+      <div>
+        <label htmlFor="size-select">Select a Size: </label>
+        <select id="size-select" name="size-select" onChange={handleChange}>
+          {productItem.sizes.map((size, index) => (
+            <option key={index} value={size}>
+              {size}
+            </option>
+          ))}
+        </select>
+      </div>
 
+      {/* Avoid showing qty if none is available  */}
       {!isProductAvailable() && (
         <div>
           <p>Sold out</p>
         </div>
       )}
+
       {isProductAvailable() && (
         <>
-          <label htmlFor="qty-select">Select Quantity: </label>
-          <select id="qty-select" name="qty-select" onChange={handleChange}>
-            {qtyToDisplay.map((number, index) => (
-              <option key={index} value={number}>
-                {number}
-              </option>
-            ))}
-          </select>
+          <div>
+            <label htmlFor="qty-select">Select Quantity: </label>
+            <select id="qty-select" name="qty-select" onChange={handleChange}>
+              {qtyToDisplay.map((number, index) => (
+                <option key={index} value={number}>
+                  {number}
+                </option>
+              ))}
+            </select>
+          </div>
         </>
       )}
 
