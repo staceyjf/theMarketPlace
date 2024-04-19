@@ -14,6 +14,8 @@ import styles from "./ProductPage.module.scss";
 
 function ProductPage({ product }) {
   // takes reducer function, initial state, initializer function
+  //state to watch for favourite?
+
   const [productItem, dispatchproductItem] = useReducer(
     productItemReducer,
     product,
@@ -25,16 +27,19 @@ function ProductPage({ product }) {
     return () => (document.title = "Welcome to theMarketPlace");
   }, [productItem]);
 
+  // update state with the discounted price
   useEffect(() => {
-    // update state with the discounted price
     dispatchproductItem({
       type: "SET_FINAL_PRICE",
     });
   }, [dispatchproductItem]);
 
-  //useEffect(() => {
-  //!isFavourited;
-  //}, [productItem.isFavourited]);
+  // update if product is a user fav
+  const handleIsFavouritedchange = () => {
+    dispatchproductItem({
+      type: "TOGGLE_ISFAVOURITED",
+    });
+  };
 
   console.log(productItem);
 
@@ -54,7 +59,7 @@ function ProductPage({ product }) {
 
       {/* to handle adding to favourites */}
       <Button
-        // onClick={handleChange}
+        onClickCB={handleIsFavouritedchange}
         stylename={"productPage_button"}
         buttonText={"Add to Favourites"}
         SvgIcon={HeartIcon}

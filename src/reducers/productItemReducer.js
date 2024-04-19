@@ -22,6 +22,7 @@ export function productItemReducer(state, action) {
           state.price * ((100 - state.discountPercentage) / 100) * 100
         ) / 100),
       };
+      // use the payload convention to pass an object
     case 'UPDATE_PRODUCT': 
       return {
           ...state,
