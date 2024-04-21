@@ -1,6 +1,14 @@
+import { Link } from "react-router-dom";
 import styles from "./TrendingCarousel.module.scss";
 
-function TrendingCarousel({ titleText, products }) {
+function TrendingCarousel({
+  titleText,
+  products,
+  navigateToPrevious,
+  navigateToNext,
+  canNavigateToPrevious,
+  canNavigateToNext,
+}) {
   return (
     <div className={styles.slider_container}>
       <div className={styles.slider_header}>
@@ -9,70 +17,16 @@ function TrendingCarousel({ titleText, products }) {
       <div className={styles.slider_wrapper}>
         <div className={styles.slider_slides_container}>
           <ul className={styles.slider_list}>
-            <li className={styles.slider_item}>
-              <a href="#">
-                <img
-                  src="assets/img/featured-product-1.jpg"
-                  alt="Featured Product 1"
-                />
-              </a>
-            </li>
-            <li className={styles.slider_item}>
-              <a href="#">
-                <img
-                  src="assets/img/featured-product-1.jpg"
-                  alt="Featured Product 1"
-                />
-              </a>
-            </li>
-            <li className={styles.slider_item}>
-              <a href="#">
-                <img
-                  src="assets/img/featured-product-1.jpg"
-                  alt="Featured Product 1"
-                />
-              </a>
-            </li>
-            <li className={styles.slider_item}>
-              <a href="#">
-                <img
-                  src="assets/img/featured-product-1.jpg"
-                  alt="Featured Product 1"
-                />
-              </a>
-            </li>
-            <li className={styles.slider_item}>
-              <a href="#">
-                <img
-                  src="assets/img/featured-product-1.jpg"
-                  alt="Featured Product 1"
-                />
-              </a>
-            </li>
-            <li className={styles.slider_item}>
-              <a href="#">
-                <img
-                  src="assets/img/featured-product-1.jpg"
-                  alt="Featured Product 1"
-                />
-              </a>
-            </li>
-            <li className={styles.slider_item}>
-              <a href="#">
-                <img
-                  src="assets/img/featured-product-1.jpg"
-                  alt="Featured Product 1"
-                />
-              </a>
-            </li>
-            <li className={styles.slider_item}>
-              <a href="#">
-                <img
-                  src="assets/img/featured-product-1.jpg"
-                  alt="Featured Product 1"
-                />
-              </a>
-            </li>
+            {products.map((product, i) => {
+              return (
+                <li className={styles.slider_item} key={i}>
+                  {/* TODO: update with ids */}
+                  <Link href="#">
+                    <img src={product} alt={`Featured Product ${i + 1}`} />
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </div>
