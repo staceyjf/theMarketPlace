@@ -6,11 +6,7 @@ import {
 
 import { addOrUpdateProduct } from "../../services/product-services.js";
 
-import ProductItemDescription from "../../components/ProductItemDescription/ProductItemDescription.jsx";
-import ProductItemForm from "../../components/ProductItemForm/ProductItemForm.jsx";
-import HeartIcon from "../../components/HeartIcon/HeartIcon.jsx";
-import Button from "../../components/Button/Button.jsx";
-import ProductItemFooter from "../../components/ProductItemFooter/ProductItemFooter.jsx";
+import ProductItemCard from "../../components/ProductItemCard/ProductItemCard.jsx";
 
 import styles from "./ProductPage.module.scss";
 
@@ -51,36 +47,13 @@ function ProductPage({ product }) {
   }, [productItem.isFavourited]);
 
   return (
-    <div>
-      {/* General product info */}
-      <div
-        className={
-          productItem.isFavourited
-            ? `${styles.productPage_heart_active}`
-            : `${styles.productPage_heart}`
-        }
-      >
-        <HeartIcon />
-      </div>
-      <ProductItemDescription productItem={productItem} />
-
-      {/* To handle size & qty selections - Is this form overkill? */}
-      <ProductItemForm
+    <main className={styles.productPage}>
+      <ProductItemCard
         productItem={productItem}
         dispatchproductItem={dispatchproductItem}
+        handleIsFavouritedchange={handleIsFavouritedchange}
       />
-
-      {/* to handle adding to favourites */}
-      <Button
-        onClickCB={handleIsFavouritedchange}
-        stylename={"productPage_button"}
-        buttonText={"Add to Favourites"}
-        SvgIcon={HeartIcon}
-      ></Button>
-
-      {/* to extra product info*/}
-      <ProductItemFooter productItem={productItem} />
-    </div>
+    </main>
   );
 }
 

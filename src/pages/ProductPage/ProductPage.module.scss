@@ -1,39 +1,13 @@
-@use "../../scss/partials/brand-variables" as bv;
 @use "../../scss/partials/queries" as q;
 
-
 .productPage {
-@include bv.font--primary(400);
-display: flex;
-flex-direction: column;
-
-&_heart {
+  flex: 1;
+  width: 100%;
+  position: relative;
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
 
-  svg {
-    width: 1.5em;
-    height: 1.5em;
+  @include q.phone {
+    padding: 10px;
   }
-
-  &_active{
-    display: flex;
-    justify-content: flex-end;
-      
-    svg {
-      width: 1.5em;
-      height: 1.5em;
-    }
-
-    svg path {
-      stroke: rgb(117, 13, 13);
-      fill: bv.$primary-color-dark;
-      stroke-width: 2;
-    }
-  }
-}
-
-  button {
-    width: 15em;
-}
 }

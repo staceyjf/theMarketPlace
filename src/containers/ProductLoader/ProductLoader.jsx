@@ -37,7 +37,7 @@ function ProductLoader() {
   }, [id, products]);
 
   return (
-    <div>
+    <>
       {fetchStatus === "LOADING" && <LoadingSpinner />}
       {fetchStatus === "FAILED" && (
         <Message severity="error" message={error.message} />
@@ -46,7 +46,7 @@ function ProductLoader() {
         <ProductGrid products={products} category="womens" />
       )}
       {product && <ProductPage product={product} />}
-    </div>
+    </>
   );
 }
 
