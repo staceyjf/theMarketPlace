@@ -7,13 +7,29 @@
 display: flex;
 flex-direction: column;
 
-.productPage_heart {
+&_heart {
   display: flex;
   justify-content: flex-end;
 
   svg {
     width: 1.5em;
     height: 1.5em;
+  }
+
+  &_active{
+    display: flex;
+    justify-content: flex-end;
+      
+    svg {
+      width: 1.5em;
+      height: 1.5em;
+    }
+
+    svg path {
+      stroke: rgb(117, 13, 13);
+      fill: bv.$primary-color-dark;
+      stroke-width: 2;
+    }
   }
 }
 

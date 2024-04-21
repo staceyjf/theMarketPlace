@@ -4,6 +4,8 @@ import {
   createInitialState,
 } from "../../reducers/productItemReducer.js";
 
+import { addOrUpdateProduct } from "../../services/product-services.js";
+
 import ProductItemDescription from "../../components/ProductItemDescription/ProductItemDescription.jsx";
 import ProductItemForm from "../../components/ProductItemForm/ProductItemForm.jsx";
 import HeartIcon from "../../components/HeartIcon/HeartIcon.jsx";
@@ -34,22 +36,30 @@ function ProductPage({ product }) {
 
   console.log(productItem);
 
-  // update if product is a user fav
+  // update if product is a user fav in state and update db?
   const handleIsFavouritedchange = () => {
     dispatchproductItem({
       type: "TOGGLE_ISFAVOURITED",
     });
   };
 
-  // add additional css as props
-  let stylingClasses = productItem.isFavourited
-    ? `styles.productPage_heart styles.productPage_heart_true`
-    : `styles.productPage_heart`;
+  useEffect(() => {
+    // add db call
+    // I haven't returned anything as I've updated my reducer
+    // TODO: is this bad practice?
+    addOrUpdateProduct("womens", productItem);
+  }, [productItem.isFavourited]);
 
   return (
-    <div className={stylingClasses}>
+    <div>
       {/* General product info */}
-      <div className={styles.productPage_heart}>
+      <div
+        className={
+          productItem.isFavourited
+            ? `${styles.productPage_heart_active}`
+            : `${styles.productPage_heart}`
+        }
+      >
         <HeartIcon />
       </div>
       <ProductItemDescription productItem={productItem} />

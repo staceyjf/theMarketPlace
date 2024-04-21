@@ -1,20 +1,20 @@
 import {
-  addDoc,
   collection,
   deleteDoc,
-  updateDoc,
   doc,
   getDoc,
   getDocs,
+  setDoc,
   onSnapshot,
 } from "firebase/firestore";
 import { db } from "../config/firestore.js";
 
+// cleaning functions
 const sortedProducts = (productArr) => {
   return [...productArr].sort((a, b) => a.category.localeCompare(b.category));
 };
+
 export const getAllProducts = async (categoryStr) => {
-  console.log("getAllProducts called with category:", categoryStr);
   const collectionRef = collection(db, categoryStr);
   const snapshot = await getDocs(collectionRef);
   const products = snapshot.docs.map((doc) => {
@@ -23,8 +23,25 @@ export const getAllProducts = async (categoryStr) => {
       ...doc.data(),
     };
   });
-
+  
   const sortedByCategory = sortedProducts(products);
-
+  console.log("getAllProducts called with category:", categoryStr);
+  
   return sortedByCategory;
 };
+
+export const addOrUpdateProduct = async (categoryStr, product) => {
+  console.log(categoryStr)
+  console.log(product.id)
+  const collectionRef = collection(db, categoryStr);
+ const docRef = doc(collectionRef, `${product.id}`);
+await setDoc(docRef, product)
+  // I haven't returned anything as I've updated my reducer 
+  // TODO: is this bad practice?
+
+   // Check if product has been updated
+  const updatedProductSnapshot = await getDoc(docRef);
+  const updatedProduct = { id: updatedProductSnapshot.id, ...updatedProductSnapshot.data() };
+
+  console.log("updateProduct called with category & product:", categoryStr, updatedProduct);
+}
