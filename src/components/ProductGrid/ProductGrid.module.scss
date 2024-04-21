@@ -6,15 +6,9 @@
     width: 100%;
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1rem;
-    justify-items: center;
+    gap: 1em;
+   
   }
-
-  // @media only screen and (min-width: 500px) and (max-width: (767px - 1)) {
-  //   &_grid {
-  //     grid-template-columns: repeat(2, 1fr);
-  //   }
-  // }
 
   @include q.tablet {
     &_grid {

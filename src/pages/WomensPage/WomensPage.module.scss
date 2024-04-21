@@ -7,21 +7,20 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  // align-items: center;
 
   &_header {
     @include bv.font--primary(300);
-    padding: 1em 0;
-    display: flex;
-    justify-content: space-between;
-
+  
     h2 {
       @include bv.font--secondary(300);
-      margin: 0;
+      margin: 0 0 10px 0;
     }
   }
 
   &_body {
     flex: 1;
+    align-self: center;
   }
 
   @include q.phone {
