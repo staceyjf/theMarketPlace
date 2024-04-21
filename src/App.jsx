@@ -11,6 +11,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import WomensPage from "./pages/WomensPage/WomensPage";
 import ComingSoonPage from "./pages/ComingSoonPage /ComingSoonPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
+import CartPage from "./pages/CartPage/CartPage.jsx";
 
 import "./App.scss";
 
@@ -20,18 +21,19 @@ function App() {
       <BrowserRouter basename="/theMarketPlace/">
         <Layout>
           <CartContextProvider>
-          <Navbar />
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route
-              path="/womens"
-              element={<WomensPage pageHeaderText={"Women's"} />}
-            />
-            <Route path="/womens/:id" element={<ProductLoader />} />
-            <Route path="/accessories" element={<ComingSoonPage />} />
-            <Route path="/skincare" element={<ComingSoonPage />} />
-            <Route path="*" element={<NotFoundPage />} />
-          </Routes>
+            <Navbar />
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route
+                path="/womens"
+                element={<WomensPage pageHeaderText={"Women's"} />}
+              />
+              <Route path="/womens/:id" element={<ProductLoader />} />
+              <Route path="/accessories" element={<ComingSoonPage />} />
+              <Route path="/skincare" element={<ComingSoonPage />} />
+              <Route path="/cart" element={<CartPage />} />
+              <Route path="*" element={<NotFoundPage />} />
+            </Routes>
           </CartContextProvider>
           <Footer />
         </Layout>

@@ -1,11 +1,16 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { CartContext } from "../../context/CartContextProvider.jsx";
+
 import Button from "../Button/Button.jsx";
+
 import styles from "./ProductItemForm.module.scss";
 
 function ProductForm({ productItem, dispatchproductItem }) {
-  const qtyToDisplay = [1, 2, 3, 4, 5, 6, 7];
-
+  const navigate = useNavigate();
+  const { cart, dispatchCart } = useContext(CartContext);
   // keep track of my form inputs to avoid only one input updating
+  const qtyToDisplay = [1, 2, 3, 4, 5, 6, 7];
   const [selectedSize, setSelectedSize] = useState("");
   const [selectedQty, setSelectedQty] = useState(1);
 
@@ -28,7 +33,8 @@ function ProductForm({ productItem, dispatchproductItem }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("add cart logic here ");
+    dispatchCart({ type: "ADD_TO_CART", payload: productItem });
+    console.log("item has been added");
   };
 
   // qty product validation

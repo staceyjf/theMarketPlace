@@ -23,25 +23,30 @@ export const getAllProducts = async (categoryStr) => {
       ...doc.data(),
     };
   });
-  
+
   const sortedByCategory = sortedProducts(products);
   console.log("getAllProducts called with category:", categoryStr);
-  
+
   return sortedByCategory;
 };
 
-export const addOrUpdateProduct = async (categoryStr, product) => {
-  console.log(categoryStr)
-  console.log(product.id)
-  const collectionRef = collection(db, categoryStr);
- const docRef = doc(collectionRef, `${product.id}`);
-await setDoc(docRef, product)
-  // I haven't returned anything as I've updated my reducer 
+export const addOrUpdateDocument = async (collectionName, product) => {
+  const collectionRef = collection(db, collectionName);
+  const docRef = doc(collectionRef, `${product.id}`);
+  await setDoc(docRef, product);
+  // I haven't returned anything as I've updated my reducer
   // TODO: is this bad practice?
 
-   // Check if product has been updated
+  // Check if product has been updated
   const updatedProductSnapshot = await getDoc(docRef);
-  const updatedProduct = { id: updatedProductSnapshot.id, ...updatedProductSnapshot.data() };
+  const updatedProduct = {
+    id: updatedProductSnapshot.id,
+    ...updatedProductSnapshot.data(),
+  };
 
-  console.log("updateProduct called with category & product:", categoryStr, updatedProduct);
-}
+  console.log(
+    "updateProduct called with category & product:",
+    collectionName,
+    updatedProduct
+  );
+};

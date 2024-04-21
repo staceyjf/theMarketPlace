@@ -4,7 +4,7 @@ import {
   createInitialState,
 } from "../../reducers/productItemReducer.js";
 
-import { addOrUpdateProduct } from "../../services/product-services.js";
+import { addOrUpdateDocument } from "../../services/product-services.js";
 
 import ProductItemCard from "../../components/ProductItemCard/ProductItemCard.jsx";
 
@@ -30,8 +30,6 @@ function ProductPage({ product }) {
     });
   }, [dispatchproductItem]);
 
-  console.log(productItem);
-
   // update if product is a user fav in state and update db?
   const handleIsFavouritedchange = () => {
     dispatchproductItem({
@@ -43,7 +41,7 @@ function ProductPage({ product }) {
     // add db call
     // I haven't returned anything as I've updated my reducer
     // TODO: is this bad practice?
-    addOrUpdateProduct("womens", productItem);
+    addOrUpdateDocument("womens", productItem);
   }, [productItem.isFavourited]);
 
   return (

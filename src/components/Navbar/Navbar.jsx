@@ -1,17 +1,21 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { NavLink } from "react-router-dom";
+
+import { CartContext } from "../../context/CartContextProvider.jsx";
 import useScreenSize from "../../hooks/useScreenSize";
 
 import HamburgerMenu from "../HamburgerMenu/HamburgerMenuIcon";
 import Cart_icon from "../../assets/Icons/cart-outline.png";
 import Search_icon from "../../assets/Icons/search-outline.png";
 import User_icon from "../../assets/Icons/user-outline.png";
+
 import styles from "./Navbar.module.scss";
 
 function Navbar() {
   const screenSize = useScreenSize();
   const [isMobile, setIsMobile] = useState(true);
   const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
+  const { cart, dispatchCart } = useContext(CartContext);
 
   const detectMobileOrTablet = () => {
     if (screenSize.width < 600) setIsMobile(true);
@@ -54,7 +58,7 @@ function Navbar() {
       )}
       {isMobile && (
         <div className={styles.hamburger} onClick={toggleMenu}>
-          <HamburgerMenu />
+          <HamburgerMenu isOpen={isHamburgerOpen} />
         </div>
       )}
       {isMobile && isHamburgerOpen && (
@@ -71,11 +75,16 @@ function Navbar() {
           <NavLink className={linkStyles} to="/womens">
             Skincare
           </NavLink>
+          <NavLink className={linkStyles} to="/cart">
+            <img src={Cart_icon} alt="Cart Icon" />
+          </NavLink>
         </div>
       )}
       {!isMobile && (
         <div className={styles.nav_icon_wrapper}>
-          <img src={Cart_icon} alt="Cart Icon" />
+          <NavLink className={linkStyles} to="/cart">
+            <img src={Cart_icon} alt="Cart Icon" />
+          </NavLink>
           <img src={Search_icon} alt="Search Icon" />
           <img src={User_icon} alt="User Icon" />
         </div>
