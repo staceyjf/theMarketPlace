@@ -3,9 +3,9 @@ import { useParams } from "react-router-dom";
 import { getAllProducts } from "../../services/product-services";
 
 import LoadingSpinner from "../../components/LoadingSpinner/LoadingSpinner";
+import Message from "../../components/Message/Message";
 import ProductGrid from "../../components/ProductGrid/ProductGrid";
 import ProductPage from "../../pages/ProductPage/ProductPage";
-import Message from "../../components/Message/Message";
 
 function ProductLoader() {
   const { id } = useParams();
@@ -37,7 +37,7 @@ function ProductLoader() {
   }, [id, products]);
 
   return (
-    <div>
+    <>
       {fetchStatus === "LOADING" && <LoadingSpinner />}
       {fetchStatus === "FAILED" && (
         <Message severity="error" message={error.message} />
@@ -46,7 +46,7 @@ function ProductLoader() {
         <ProductGrid products={products} category="womens" />
       )}
       {product && <ProductPage product={product} />}
-    </div>
+    </>
   );
 }
 

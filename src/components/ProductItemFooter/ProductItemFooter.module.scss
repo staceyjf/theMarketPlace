@@ -1,0 +1,5 @@
+@use "../../scss/partials/brand-variables" as bv;
+
+.footer {
+  @include bv.font--primary(400);
+}

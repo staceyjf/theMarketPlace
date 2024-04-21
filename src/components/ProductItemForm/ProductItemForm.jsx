@@ -38,7 +38,7 @@ function ProductForm({ productItem, dispatchproductItem }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={styles.form}>
       <div>
         <label htmlFor="size-select">Select a Size: </label>
         <select id="size-select" name="size-select" onChange={handleChange}>

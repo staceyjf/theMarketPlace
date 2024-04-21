@@ -1,7 +1,7 @@
-  form {
-    width: 40%;
+.form {
     display: flex;
     flex-direction: column;
+    height: fit-content;
     row-gap: 1em;
     
     button {
