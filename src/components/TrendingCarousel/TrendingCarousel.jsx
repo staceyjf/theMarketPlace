@@ -31,8 +31,20 @@ function TrendingCarousel({
         </div>
       </div>
       <div className={styles.slider_arrow}>
-        <button className={styles.slider_arrow_prev}>Prev</button>
-        <button className={styles.slider_arrow_next}>Next</button>
+        <button
+          className={styles.slider_arrow_prev}
+          disabled={!canNavigateToPrevious}
+          onClick={navigateToPrevious}
+        >
+          Prev
+        </button>
+        <button
+          className={styles.slider_arrow_next}
+          disabled={!canNavigateToNext}
+          onClick={navigateToNext}
+        >
+          Next
+        </button>
       </div>
     </div>
   );
