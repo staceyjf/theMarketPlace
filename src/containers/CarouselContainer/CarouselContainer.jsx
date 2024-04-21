@@ -17,7 +17,7 @@ function CarouselContainer({ titleText }) {
   // loading product images
   const [currentSlideIndex, setCurrentSlideIndex] = useState(1);
   const totalAmountOfImages = products.length;
-  const imagesPerPage = 5;
+  const imagesPerPage = 4;
   const totalPages = Math.floor(totalAmountOfImages / imagesPerPage);
 
   // slider controls

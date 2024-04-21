@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+
 import styles from "./TrendingCarousel.module.scss";
 
 function TrendingCarousel({
@@ -16,34 +17,32 @@ function TrendingCarousel({
       </div>
       <div className={styles.slider_wrapper}>
         <div className={styles.slider_slides_container}>
-          <ul className={styles.slider_list}>
-            {products.map((product, i) => {
-              return (
-                <li className={styles.slider_item} key={i}>
-                  {/* TODO: update with ids */}
-                  <Link href="#">
-                    <img src={product} alt={`Featured Product ${i + 1}`} />
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
+          {products.map((product, i) => {
+            return (
+              <div className={styles.slider_item} key={i}>
+                {/* TODO: update with ids */}
+                <Link href="#">
+                  <img src={product} alt={`Featured Product ${i + 1}`} />
+                </Link>
+              </div>
+            );
+          })}
         </div>
       </div>
-      <div className={styles.slider_arrow}>
+      <div className={styles.slider_arrows}>
         <button
           className={styles.slider_arrow_prev}
           disabled={!canNavigateToPrevious}
           onClick={navigateToPrevious}
         >
-          Prev
+          <span className={styles.slider_arrow_prev_left}></span>
         </button>
         <button
           className={styles.slider_arrow_next}
           disabled={!canNavigateToNext}
           onClick={navigateToNext}
         >
-          Next
+          <span className={styles.slider_arrow_next_right}></span>
         </button>
       </div>
     </div>
