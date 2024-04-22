@@ -1,6 +1,6 @@
 export function createInitialState(product) {
 return {
-    ...product,
+    ...product, //does have all the extras but I could take it out when I send the cart to db?
     selectedSize: 'S',
     selectedQty: 1,
     discountedPrice: 0
