@@ -35,6 +35,7 @@ function ProductForm({ productItem, dispatchproductItem }) {
     e.preventDefault();
     dispatchCart({ type: "ADD_TO_CART", payload: productItem });
     console.log("item has been added");
+    navigate("/cart");
   };
 
   // qty product validation
