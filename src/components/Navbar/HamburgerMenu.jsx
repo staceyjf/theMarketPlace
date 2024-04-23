@@ -1,6 +1,6 @@
-import styles from "./HamburgerMenuIcon.module.scss";
+import styles from "./HamburgerMenu.module.scss";
 
-function HamburgerMenuIcon({ isOpen }) {
+function HamburgerMenu({ isOpen }) {
   return (
     <div className={styles.hamburger_menu}>
       <span className={`${styles.burger} ${isOpen ? styles.open : ""}`}></span>
@@ -10,4 +10,4 @@ function HamburgerMenuIcon({ isOpen }) {
   );
 }
 
-export default HamburgerMenuIcon;
+export default HamburgerMenu;

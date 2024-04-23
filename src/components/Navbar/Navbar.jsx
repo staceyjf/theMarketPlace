@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import { CartContext } from "../../context/CartContextProvider.jsx";
 import useScreenSize from "../../hooks/useScreenSize";
 
-import HamburgerMenu from "../HamburgerMenu/HamburgerMenuIcon";
+import HamburgerMenu from "../Navbar/HamburgerMenu.jsx";
 import Cart_icon from "../../assets/Icons/cart-outline.png";
 import Search_icon from "../../assets/Icons/search-outline.png";
 import User_icon from "../../assets/Icons/user-outline.png";

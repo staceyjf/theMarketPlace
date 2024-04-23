@@ -1,9 +1,9 @@
 import dotenv from "dotenv";
 dotenv.config();
 
-import serviceAccount from "./serviceAccountKey.json" assert { type: "json" };
+// redo if needed again
+// import serviceAccount from "./serviceAccountKey.json" assert { type: "json" };
 import firebaseAdmin from "firebase-admin";
-import { collection, addDoc, doc, setDoc } from "firebase/firestore";
 
 // Initialize Firebase Admin SDK
 firebaseAdmin.initializeApp({

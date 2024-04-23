@@ -1,4 +1,4 @@
-import ProductCard from "../../components/ProductCard/ProductCard";
+import ProductCard from "../../components/ProductGrid/ProductCard";
 import styles from "./ProductGrid.module.scss";
 
 function ProductGrid({ products, category }) {

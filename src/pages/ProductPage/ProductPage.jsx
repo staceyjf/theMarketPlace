@@ -6,7 +6,7 @@ import {
 
 import { addOrUpdateDocument } from "../../services/product-services.js";
 
-import ProductItemCard from "../../components/ProductItemCard/ProductItemCard.jsx";
+import ProductItem from "../../components/ProductItem/ProductItem.jsx";
 
 import styles from "./ProductPage.module.scss";
 
@@ -46,7 +46,7 @@ function ProductPage({ product }) {
 
   return (
     <main className={styles.productPage}>
-      <ProductItemCard
+      <ProductItem
         productItem={productItem}
         dispatchproductItem={dispatchproductItem}
         handleIsFavouritedchange={handleIsFavouritedchange}

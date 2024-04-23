@@ -1,6 +1,6 @@
-import HeartIcon from "../../components/HeartIcon/HeartIcon.jsx";
-import ProductItemForm from "../../components/ProductItemForm/ProductItemForm.jsx";
-import Button from "../../components/Button/Button.jsx";
+import HeartIcon from "../HeartIcon/HeartIcon.jsx";
+import ProductItemForm from "./ProductItemForm.jsx";
+import Button from "../Button/Button.jsx";
 
 import styles from "./ProductItemDescription.module.scss";
 

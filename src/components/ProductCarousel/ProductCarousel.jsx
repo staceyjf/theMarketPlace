@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 
-import styles from "./TrendingCarousel.module.scss";
+import styles from "./ProductCarousel.module.scss";
 
-function TrendingCarousel({
+function ProductCarousel({
   titleText,
   products,
   navigateToPrevious,
@@ -11,15 +11,15 @@ function TrendingCarousel({
   canNavigateToNext,
 }) {
   return (
-    <div className={styles.slider_container}>
-      <div className={styles.slider_header}>
+    <div className={styles.carousel_container}>
+      <div className={styles.carousel_header}>
         <h2>{titleText}</h2>
       </div>
-      <div className={styles.slider_wrapper}>
-        <div className={styles.slider_slides_container}>
+      <div className={styles.carousel_wrapper}>
+        <div className={styles.carousel_slides_container}>
           {products.map((product, i) => {
             return (
-              <div className={styles.slider_item} key={i}>
+              <div className={styles.carousel_item} key={i}>
                 {/* TODO: update with ids */}
                 <Link href="#">
                   <img src={product} alt={`Featured Product ${i + 1}`} />
@@ -29,24 +29,24 @@ function TrendingCarousel({
           })}
         </div>
       </div>
-      <div className={styles.slider_arrows}>
+      <div className={styles.carousel_arrows}>
         <button
-          className={styles.slider_arrow_prev}
+          className={styles.carousel_arrow_prev}
           disabled={!canNavigateToPrevious}
           onClick={navigateToPrevious}
         >
-          <span className={styles.slider_arrow_prev_left}></span>
+          <span className={styles.carousel_arrow_prev_left}></span>
         </button>
         <button
-          className={styles.slider_arrow_next}
+          className={styles.carousel_arrow_next}
           disabled={!canNavigateToNext}
           onClick={navigateToNext}
         >
-          <span className={styles.slider_arrow_next_right}></span>
+          <span className={styles.carousel_arrow_next_right}></span>
         </button>
       </div>
     </div>
   );
 }
 
-export default TrendingCarousel;
+export default ProductCarousel;

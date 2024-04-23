@@ -1,10 +1,10 @@
-import ProductItemDescription from "../../components/ProductItemDescription/ProductItemDescription.jsx";
-import HeartIcon from "../../components/HeartIcon/HeartIcon.jsx";
-import ProductItemFooter from "../../components/ProductItemFooter/ProductItemFooter.jsx";
+import ProductItemDescription from "../../components/ProductItem/ProductItemDescription.jsx";
+import HeartIcon from "../HeartIcon/HeartIcon.jsx";
+import ProductItemFooter from "../../components/ProductItem/ProductItemFooter.jsx";
 
-import styles from "./ProductItemCard.module.scss";
+import styles from "./ProductItem.module.scss";
 
-function ProductItemCard({
+function ProductItem({
   productItem,
   dispatchproductItem,
   handleIsFavouritedchange,
@@ -15,8 +15,8 @@ function ProductItemCard({
       <div
         className={
           productItem.isFavourited
-            ? `${styles.productItemCard_heart_active}`
-            : `${styles.productItemCard_heart}`
+            ? `${styles.productItem_heart_active}`
+            : `${styles.productItem_heart}`
         }
       >
         <HeartIcon />
@@ -35,4 +35,4 @@ function ProductItemCard({
   );
 }
 
-export default ProductItemCard;
+export default ProductItem;

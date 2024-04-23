@@ -1,7 +1,7 @@
 @use "../../scss/partials/brand-variables" as bv;
 @use "../../scss/partials/queries" as q;
 
-.productItemCard {
+.productItem {
 @include bv.font--primary(400);
 
 &_heart {

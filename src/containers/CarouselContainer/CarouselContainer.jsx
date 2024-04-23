@@ -1,13 +1,11 @@
 import { useEffect, useState } from "react";
 import { getAllProducts } from "../../services/product-services";
 
-import product1URL_rect from "../../assets/TrendingCarousel/product_1_rect.jpg";
-import product2URL_rect from "../../assets/TrendingCarousel/product_2_rect.jpg";
-import product3URL_rect from "../../assets/TrendingCarousel/product_3_rect.jpg";
+import product1URL_rect from "../../assets/ProductCarousel/product_1_rect.jpg";
+import product2URL_rect from "../../assets/ProductCarousel/product_2_rect.jpg";
+import product3URL_rect from "../../assets/ProductCarousel/product_3_rect.jpg";
 
-import LoadingSpinner from "../../components/LoadingSpinner/LoadingSpinner";
-import Message from "../../components/Message/Message";
-import TrendingCarousel from "../../components/TrendingCarousel/TrendingCarousel";
+import ProductCarousel from "../../components/ProductCarousel/ProductCarousel";
 
 function CarouselContainer({ titleText }) {
   const [products, setProducts] = useState([]);
@@ -73,9 +71,9 @@ function CarouselContainer({ titleText }) {
         <Message severity="error" message={error.message} />
       )}
       {fetchStatus === "SUCCESS" && (
-        <TrendingCarousel productImgURLs={productImgURLs} />
+        <ProductCarousel productImgURLs={productImgURLs} />
       )} */}
-      <TrendingCarousel
+      <ProductCarousel
         titleText={titleText}
         products={productsOnCurrentPage}
         navigateToPrevious={navigateToPrevious}

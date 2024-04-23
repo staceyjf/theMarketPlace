@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import TrendingCard from "../TrendingCard/TrendingCard";
+import TrendingCard from "./TrendingCard";
 import styles from "./TrendingBanner.module.scss";
 
 function TrendingBanner({ titleText, linkText, link, imgUrls }) {

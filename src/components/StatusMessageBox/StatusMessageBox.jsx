@@ -1,6 +1,6 @@
-import styles from "./Message.module.scss";
+import styles from "./StatusMessageBox.module.scss";
 
-function Message({ severity = "error", message }) {
+function StatusMessageBox({ severity = "error", message }) {
   const classes = `${styles.container} ${styles[severity]}`;
   return (
     <div className={classes}>
@@ -9,4 +9,4 @@ function Message({ severity = "error", message }) {
   );
 }
 
-export default Message;
+export default StatusMessageBox;
