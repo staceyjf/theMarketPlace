@@ -22,11 +22,15 @@ function CarouselContainer({ titleText }) {
 
   // slider controls
   const navigateToPrevious = () => {
+    // call the previous page index
+    // Math.max - ensures that it doesn't go below the first page
     const prevPage = Math.max(currentSlideIndex - 1, 1);
     setCurrentSlideIndex(prevPage);
   };
 
   const navigateToNext = () => {
+    // call the next page index
+    // Math.min - ensures that we don't go past the total pages
     const nextPage = Math.min(currentSlideIndex + 1, totalPages);
     setCurrentSlideIndex(nextPage);
   };
