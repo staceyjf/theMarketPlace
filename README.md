@@ -9,7 +9,7 @@ theMarketPlace is a React front-end backed by FireBase e-commerce application..
 
 <br>
 
-Explore it at: [portfolio.staceyfanner.com/theMarketPlace/](http://portfolio.staceyfanner.com/theMarketPlace/)
+Explore it at: [https://www.staceyfanner.com/theMarketPlace/](https://www.staceyfanner.com/theMarketPlace/)
 
 ## About
 
