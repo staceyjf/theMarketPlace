@@ -34,7 +34,6 @@ function ProductForm({ productItem, dispatchproductItem }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatchCart({ type: "ADD_TO_CART", payload: productItem });
-    console.log("item has been added");
     navigate("/cart");
   };
 

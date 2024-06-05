@@ -30,7 +30,7 @@ function ProductPage({ product }) {
     });
   }, [dispatchproductItem]);
 
-  // update if product is a user fav in state and update db?
+  // TODO: isFavorite can be a API call to update in db
   const handleIsFavouritedchange = () => {
     dispatchproductItem({
       type: "TOGGLE_ISFAVOURITED",
@@ -38,9 +38,6 @@ function ProductPage({ product }) {
   };
 
   useEffect(() => {
-    // add db call
-    // I haven't returned anything as I've updated my reducer
-    // TODO: is this bad practice?
     addOrUpdateDocument("womens", productItem);
   }, [productItem.isFavourited]);
 

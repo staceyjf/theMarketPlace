@@ -1,7 +1,6 @@
 # Welcome to theMarketPlace
 
-theMarketPlace is a React front-end backed by FireBase e-commerce application..
-
+theMarketPlace is a React front-end backed by FireBase e-commerce application.
 
 <div align="center">
   <img src="./brief/homepage.png" alt="Homepage Screenshot" width="700">
@@ -13,7 +12,7 @@ Explore it at: [portfolio.staceyfanner.com/theMarketPlace/](http://portfolio.sta
 
 ## About
 
-theMarketPlace is a React front-end e-commerce application designed to provide users with an immersive shopping experience for luxury fashion items. Leveraging React and FireBase, it offers a seamless interface for browsing products.
+theMarketPlace is an e-commerce application designed to provide users with an immersive shopping experience for luxury fashion items. Leveraging React and FireBase, it offers a seamless interface for browsing products.
 
 ## Planning Artifacts
 
@@ -28,8 +27,9 @@ theMarketPlace is a React front-end e-commerce application designed to provide u
 ## Key Features:
 
 1. **Product Carousel:** Provides an interactive way to create awareness for new products while increasing user engagement and time spent on site.
-2. **Category Page:** Display a grid of products populated via FireBase.
+2. **Category Page:** Displays a grid of products populated via FireBase.
 3. **Product Page:** Provides additional details of a selected product including the ability to add as a favorite and add to cart.
+4. **Cart Functionality:** Add products to your cart and checkout. Stock levels are subsequently updated post-checkout.
 
 ## Key Learning Highlights
 
@@ -37,22 +37,35 @@ theMarketPlace is a React front-end e-commerce application designed to provide u
 2. **useContext**: Helped me streamline the way data is passed down through the component tree.
 3. **Seeding data via dummyJson API**: Working with the admin SDK for FireBase to populate my db with products.
 
-<!-- 
-## Challenges
+## Changelog
 
-1. **Dialog element**: Issues with rendering and understanding that adding a display property to the dialog itself would negate the close() method which meant that the dialog effectively would not "close".
-2. **CSS Positioning**: Working across Grid and Flexbox to get the best of each.
-3. **Responsive Design**: Trying to manage how the app would be experienced across a range of device sizes - using Polypane to guide my choices to help shape a responsive experience.  -->
+Date: 05/06/24
+
+Updates:
+
+**Enhanced Cart functionality:**
+
+- Added Cart and Thank You pages to enhance the UX during the checkout process.
+- Implemented additional methods to the Cart Reducer to access total cost, total quantity, and clear the cart for the checkout process.
+
+**Layout:**
+
+- Added a favicon for a more polished, professional look.
 
 ## To-Dos
 
-1. **Cart Page**: Implement UX and logic to complete the Cart functionality 
+1. Search functionality so users can easily find products.
+2. Integration of Stripe for dummy payments.
 
 ## Screenshots
 
-| Home Page                                | Product Page                     |
-| ---------------------------------------- | ------------------------------- |
-| ![Homepage](./brief/homepage.png) | ![Product Page](./brief/product.png) |
+| Home Page                                                    | Product Page                                                    |
+| ------------------------------------------------------------ | --------------------------------------------------------------- |
+| <img src="./brief/homepage.png" alt="Homepage" height="200"> | <img src="./brief/product.png" alt="Product Page" height="200"> |
+
+| Cart Page                                                     |
+| ------------------------------------------------------------- |
+| <img src="./brief/cartpage.png" alt="Cart Page" height="200"> |
 
 ## Technologies Used
 

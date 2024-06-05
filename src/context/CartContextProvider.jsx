@@ -5,7 +5,13 @@ export const CartContext = createContext(null);
 
 const CartContextProvider = ({ children }) => {
   // takes reducer function, initial state, initializer function (optional - don't need one as its empty to start with)
-  const [cart, dispatchCart] = useReducer(cartReducer, []);
+  const initialState = {
+    cartItems: [],
+    totalPrice: 0,
+    totalQty: 0,
+  };
+
+  const [cart, dispatchCart] = useReducer(cartReducer, initialState);
 
   // don't need a useEffect as its empty when it starts
 

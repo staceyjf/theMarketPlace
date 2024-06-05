@@ -12,6 +12,7 @@ import WomensPage from "./pages/WomensPage/WomensPage";
 import ComingSoonPage from "./pages/ComingSoonPage /ComingSoonPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import CartPage from "./pages/CartPage/CartPage.jsx";
+import ThankYouPage from "./pages/ThankYouPage/ThankYouPage.jsx";
 
 import "./App.scss";
 
@@ -32,6 +33,7 @@ function App() {
               <Route path="/accessories" element={<ComingSoonPage />} />
               <Route path="/skincare" element={<ComingSoonPage />} />
               <Route path="/cart" element={<CartPage />} />
+              <Route path="/thankyou" element={<ThankYouPage />} />
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </CartContextProvider>

@@ -1,11 +1,10 @@
 import {
   collection,
-  deleteDoc,
   doc,
   getDoc,
   getDocs,
   setDoc,
-  onSnapshot,
+  writeBatch,
 } from "firebase/firestore";
 import { db } from "../config/firestore.js";
 
@@ -34,8 +33,6 @@ export const addOrUpdateDocument = async (collectionName, product) => {
   const collectionRef = collection(db, collectionName);
   const docRef = doc(collectionRef, `${product.id}`);
   await setDoc(docRef, product);
-  // I haven't returned anything as I've updated my reducer
-  // TODO: is this bad practice?
 
   // Check if product has been updated
   const updatedProductSnapshot = await getDoc(docRef);
@@ -49,4 +46,17 @@ export const addOrUpdateDocument = async (collectionName, product) => {
     collectionName,
     updatedProduct
   );
+};
+
+export const updateProductQty = async (updates) => {
+  const batch = writeBatch(db);
+
+  updates.forEach((update) => {
+    const docRef = doc(db, "womens", update.id);
+    batch.update(docRef, { stock: update.newAvailableQty });
+  });
+
+  await batch.commit();
+
+  console.log("updateProductQty called and db updated");
 };

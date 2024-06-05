@@ -16,10 +16,6 @@ function ProductItem({
           src={productItem.images[1]}
           alt={`Product image for ${productItem.title}`}
         />
-        {/* <img
-          src={productItem.images[2]}
-          alt={`Product image for ${productItem.title}`}
-        /> */}
       </div>
 
       <div className={styles.ProductItemDescription_details}>
@@ -32,7 +28,7 @@ function ProductItem({
         <p></p>
         <p>Rating: {productItem.rating}</p>
 
-        {/* To handle size & qty selections - Is this form overkill? */}
+        {/* To handle size & qty selections */}
         <ProductItemForm
           productItem={productItem}
           dispatchproductItem={dispatchproductItem}

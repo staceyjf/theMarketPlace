@@ -1,0 +1,19 @@
+@use "../../scss/partials/brand-variables" as bv;
+@use "../../scss/partials/queries" as q;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+  gap: 1.5em;
+  @include bv.font--secondary(400);
+}
+
+.title {
+  font-size: 30px;
+  @include q.phone {
+    font-size: 24px;
+  }
+}
