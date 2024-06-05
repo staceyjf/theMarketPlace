@@ -30,6 +30,7 @@ theMarketPlace is an e-commerce application designed to provide users with an im
 2. **Category Page:** Displays a grid of products populated via FireBase.
 3. **Product Page:** Provides additional details of a selected product including the ability to add as a favorite and add to cart.
 4. **Cart Functionality:** Add products to your cart and checkout. Stock levels are subsequently updated post-checkout.
+5. **Github Action:** Integrated a YAML config file to facilitate a basic CI/CD pipeline to build and deploy the app via GitHub Pages.
 
 ## Key Learning Highlights
 
