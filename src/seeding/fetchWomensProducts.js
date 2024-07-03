@@ -33,8 +33,20 @@ const cleanData = (data) => {
   });
   return updatedProducts;
 };
+
+const clearExistingData = async () => {
+  const querySnapshot = await db.collection("womens").get();
+  const batch = db.batch();
+  querySnapshot.forEach((doc) => {
+    batch.delete(doc.ref);
+  });
+  await batch.commit();
+};
+
 // Function to fetch data from API and seed it
 const seedData = async () => {
+  await clearExistingData();
+
   const promises = endPoints.map((url) =>
     fetch(url)
       .then((response) => response.json())
@@ -61,7 +73,6 @@ const seedData = async () => {
       sizes: product.sizes,
       rating: product.rating,
       stock: product.stock,
-      brand: product.brand,
       category: product.category,
       thumbnail: product.thumbnail,
       images: product.images,
