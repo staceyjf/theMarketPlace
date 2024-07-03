@@ -27,7 +27,6 @@ const CartItem = ({ item }) => {
       </div>
       <div className={styles.desc}>
         <p className={styles.title}>{item.title}</p>
-        <p className={styles.text}>{item.brand}</p>
         <p className={styles.link}>Selected Size: {item.selectedSize}</p>
         <p className={styles.text}>Quantity: {item.selectedQty}</p>
         <p className={styles.text}>

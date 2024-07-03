@@ -53,6 +53,24 @@ Updates:
 
 - Added a favicon for a more polished, professional look.
 
+Date: 03/07/24
+
+Updates:
+
+**Temp fix to Dummy Json API change:**
+
+- Reseeded database to reflect new response shape from Dummy Json API
+- BUG: There seems to be an issue with the thumbnails not loading due issues with the CDN url. I have raised a Issues ticket with via their github.
+
+**Layout:**
+
+- Added a favicon for a more polished, professional look.
+
+## To-Dos
+
+1. Search functionality so users can easily find products.
+2. Integration of Stripe for dummy payments.
+
 ## To-Dos
 
 1. Search functionality so users can easily find products.

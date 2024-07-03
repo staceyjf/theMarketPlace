@@ -15,9 +15,8 @@
   }
 
   &_imgs img {
-    width: 100%;
+    max-width: 300px;
     height: auto;
-    object-fit: cover;
   }
 
   &_details {
@@ -42,7 +41,7 @@
     max-width: 800px;
 
     &_imgs img {
-      width: auto;
+      max-width: 600px;
       height: 80%;
       object-fit: cover;
     }

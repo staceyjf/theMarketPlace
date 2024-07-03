@@ -19,6 +19,7 @@ function ProductLoader() {
     setFetchStatus("LOADING");
     getAllProducts("womens")
       .then((data) => {
+        console.log(data);
         setFetchStatus("SUCCESS");
         setProducts(data);
       })
